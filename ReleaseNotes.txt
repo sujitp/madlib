@@ -14,14 +14,6 @@ MADlib v0.6
 
 Release Date: 2013-Apr-01
 
-Bug Fixes:
-* C++ abstract layer:
-    - Correct handling of NULL values in the input array (MADLIB-773)
-* Naive Bayes:
-    - Better handling of NULL values 
-* Sketch estimator:
-    - Better results in some circumstances
-
 New Features / Improvements:
 * Generic cross-validation:
     - Support for k-fold cross-validation of any supervised learning
@@ -44,10 +36,26 @@ New Features / Improvements:
     - Support for an overview of data table
 * Eigen package upgrade
     - Now Eigen 3.1.2 is used by MADlib v0.6
-* Unit tesing framework:
+* Unit testing framework:
     - A new unit testing framework is added for C++ abstraction layer
 
+Bug Fixes:
+* C++ abstraction layer:
+    - Improved handling of NULL values in the input array (MADLIB-773)
+* Naive Bayes:
+    - Improved the handling of NULL values. (MADlib-749) 
+
 Known Issues:
+
+* K-means:
+    - K-means crashes on some datasets, when the dimensionality of the points is not uniform on the data set. (MADlib-789) 
+
+* Distribution Functions: 
+    - Certain quantile functions will abort their session on invalid input. (MADlib-786) 
+
+* Multinomial Logistic Regression:
+    - Signs of coefficient outputs are inconsistent with other tools like R and Stata. (MADlib-785) 
+
 
 --------------------------------------------------------------------------------
 MADlib v0.5
